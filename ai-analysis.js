@@ -172,12 +172,12 @@ app.post("/api/chat", async (req, res) => {
 
 
 // 設定靜態檔案路徑：假設 build 資料夾在 Express 專案的上一層的上一層 (即專案根目錄)
-app.use(express.static(path.join(__dirname, "../../build")));
+app.use(express.static(path.join(__dirname, "build")));
 
 // 🚨 萬用路由修正：只針對 GET 且非 /api/ 開頭的請求回傳 index.html
 app.use((req, res, next) => {
     if (req.method === 'GET' && !req.path.startsWith('/api/')) {
-        const indexPath = path.join(__dirname, "../../build", "index.html");
+        const indexPath = path.join(__dirname, "build", "index.html");
         return res.sendFile(indexPath, (err) => {
             if (err) {
                 console.log("Warning: index.html not found. Are you in development mode?");
