@@ -91,7 +91,7 @@ app.use(express.json());
 // 從環境變數中獲取 API_KEY
 const API_KEY = process.env.GOOGLE_API_KEY;
 // 這裡使用的是最新的 Gemini 2.5 Flash 模型
-const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash-lite:generateContent"; 
+const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent"; 
 
 if (!API_KEY) {
     console.error("Error: GOOGLE_API_KEY is not set in .env file. Please check your .env file.");
